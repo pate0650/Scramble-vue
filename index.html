@@ -1,0 +1,40 @@
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Welcome to Scramble.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="container">
+    <div class="app" id="app">
+      <section class="heading">
+        <h1> Welcome to Scramble</h1>
+      </section>
+    <div class="main_board">
+      <section class="score">
+        <h3 v-cloak>Points: <br>{{ points }}</h3>
+     </section>
+     <section class="srtike" >
+       <h3 v-cloak> Strikes: <br>{{ strike }}</h3>
+     </section>
+     <section class="word">
+       <h2 v-cloak>{{ currentScrambleWord }}</h2>
+     </section>
+    </div>
+     <from class="form" v-on:submit.prevent="passButton">
+       <textarea class="input" v-model="guessedWord" @keyup.enter="keyupCheck"></textarea>
+       <button class="button" @click="passButton"> {{pass}} Passes Remaining</button>
+     </from>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="scramble.js"></script>
+</body>
+
+</html>
+
